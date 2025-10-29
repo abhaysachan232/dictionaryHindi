@@ -1,0 +1,332 @@
+import { NextResponse } from "next/server";
+import articles from "../../public/data.json";
+
+export const dynamic = "force-dynamic";
+
+type Article = {
+  slug: string;
+  updateAt: string;
+};
+
+export async function GET() {
+  const baseUrl = "https://learnaigalaxy.com";
+
+  const urls = (articles as Article[])
+    .map((post) => {
+      const lastmod = new Date(post.updateAt).toISOString();
+      return `
+      <url>
+        <loc>${baseUrl}/${post.slug}</loc>
+        <lastmod>${lastmod}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+      </url>`;
+    })
+    .join("");
+
+  const homepage = `
+    <url>
+      <loc>${baseUrl}</loc>
+      <lastmod>${new Date().toISOString()}</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+    </url>`;
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    ${homepage}
+    ${urls}
+
+    
+
+<url>
+  <loc>https://learnaigalaxy.com/</loc>
+  <lastmod>2025-10-29</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/index.html</loc>
+  <lastmod>2025-10-29</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/grammar.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/vocabulary.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings.html</loc>
+  <lastmod>2025-03-01T13:36:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/contact.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/grammar/parts-of-speech.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/grammar/sentence-structure.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/grammar/punctuation.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/grammar/voice.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/grammar/mood.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/grammar/agreement.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/vocabulary/body-parts.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/vocabulary/relations.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/vocabulary/flowers.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/vocabulary/fruits.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/vocabulary/vegetables.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/vocabulary/animals.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/a-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/b-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/c-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/d-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/e-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/f-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/g-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/h-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/i-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/how-to-learn-vocabulary.html</loc>
+  <lastmod>2025-03-01T13:36:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/policy.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/grammar/modifiers.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/grammar/phrases-and-clauses.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/grammar/verbs-forms.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/grammar/tenses.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/grammar/capitalization.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/grammar/word-order.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/vocabulary/birds.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/vocabulary/clothes-wearing.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/vocabulary/antonyms.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/vocabulary/synonyms.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/j-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/k-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/l-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/m-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/n-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/o-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/p-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/q-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/r-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/s-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/t-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/u-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/v-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/w-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/x-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/y-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://learnaigalaxy.com/meanings/z-meanings.html</loc>
+  <lastmod>2025-03-01T13:36:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+  </urlset>`;
+
+
+
+  return new NextResponse(sitemap, {
+    headers: {
+      "Content-Type": "application/xml",
+    },
+  });
+}
