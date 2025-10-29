@@ -1,0 +1,769 @@
+@media (max-width:1400px) {
+    .banner-content .left-content h1 {
+        color: #1c1553;
+        font-size: 40px
+    }
+
+    .banner-content .left-content p {
+        font-size: 17px;
+        color: #666;
+        margin-top: 20px
+    }
+
+    section.content table {
+        width: 70%
+    }
+
+    footer.footer .footer-top .left p {
+        padding: 0 50px
+    }
+}
+
+@media (max-width:1200px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 70px
+    }
+
+    footer.footer .footer-top .left p {
+        padding: 0 30px
+    }
+
+    .banner-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 150px;
+        width: 100vw;
+        height: 100%
+    }
+
+    .banner-content .right-content {
+        width: 40%
+    }
+
+    .banner-content .right-content img {
+        width: 350px;
+        height: 350px;
+        object-fit: contain
+    }
+
+    .banner-content .left-content h1 {
+        color: #1c1553;
+        font-size: 40px
+    }
+
+    .banner-content .left-content p {
+        font-size: 17px;
+        color: #666;
+        margin-top: 20px
+    }
+
+    footer.footer {
+        background: #2e5f85;
+        margin-top: 100px;
+        padding: 50px 100px
+    }
+}
+
+@media (min-width:992px) {
+    #lg-none {
+        display: none
+    }
+}
+
+@media (max-width:992px) {
+
+    nav .navlinks ul .active::after,
+    nav .navlinks ul li::after {
+        height: 2.3px;
+        margin-top: 3px;
+        background: #2048da;
+        display: block
+    }
+
+    .secMtop {
+        margin-top: 80px
+    }
+
+    #d-none-991,
+    #sm-none {
+        display: none
+    }
+
+    #how-to-learn {
+        font-size: 30px;
+        text-align: center
+    }
+
+    section.content .grammar table,
+    section.content table {
+        width: 80%
+    }
+
+    header {
+        width: 100vw;
+        height: auto;
+        /* padding-bottom: 50px; */
+        padding-top: 140px
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 50px
+    }
+
+    nav .navlinks,
+    nav .navlinks-2 {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 93px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        padding: 30px 0;
+        text-align: center
+    }
+
+    section .head p {
+        font-size: 17px
+    }
+
+    #menu {
+        z-index: 2
+    }
+
+    #menu-bar {
+        width: 30px;
+        cursor: pointer
+    }
+
+    .bar {
+        height: 4px;
+        margin: 1px 0;
+        width: 100%;
+        background-color: #2048da;
+        display: block;
+        border-radius: 5px;
+        transition: .2s
+    }
+
+    #bar1 {
+        transform: translateY(-3px)
+    }
+
+    #bar3 {
+        transform: translateY(3px)
+    }
+
+    .change {
+        display: block
+    }
+
+    .change .bar {
+        background-color: #000;
+        margin: 0
+    }
+
+    .change #bar1 {
+        transform: translateY(3px) rotateZ(-45deg)
+    }
+
+    .change #bar2 {
+        opacity: 0
+    }
+
+    .change #bar3 {
+        transform: translateY(-5px) rotateZ(45deg)
+    }
+
+    nav .navlinks {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .3s ease-in-out;
+        border: 1px solid #2048da
+    }
+
+    nav .navlinks-2 {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+    }
+
+    .banner-content,
+    nav .navlinks ul {
+        display: flex;
+        flex-direction: column
+    }
+
+    nav .navlinks ul {
+        list-style: none;
+        width: fit-content;
+        margin: 0 auto
+    }
+
+    nav .navlinks ul li {
+        margin: 10px 0
+    }
+
+    nav .navlinks ul li a {
+        color: #666;
+        font-size: 17px
+    }
+
+    nav .navlinks ul .active::after {
+        width: 100%
+    }
+
+    nav .navlinks ul li.active a {
+        color: #2048da
+    }
+
+    nav .navlinks ul li::after {
+        content: "";
+        width: 0%;
+        transition: .4s ease-out
+    }
+
+    nav .navlinks ul li:hover::after {
+        width: 100%
+    }
+
+    .banner-content {
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        width: 100vw;
+        height: auto
+    }
+
+    .banner-content .right-content {
+        width: 100%;
+        text-align: center
+    }
+
+    .banner-content .left-content {
+        margin-top: 50px
+    }
+
+    .banner-content .right-content img {
+        width: 300px
+    }
+
+    section.grammer,
+    section.vocabulary {
+        padding: 50px
+    }
+
+    section.meanings {
+        padding: 50px 82px
+    }
+
+    section.how-to-learn {
+        padding: 50px 110px
+    }
+
+    section.grammer .section-content,
+    section.vocabulary .section-content {
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        text-align: center
+    }
+
+    section.meanings .section-content {
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        text-align: center
+    }
+
+    section.how-to-learn .section-content {
+        margin-top: 70px;
+        text-align: justify;
+        border: 1px solid #fff;
+        box-shadow: 0 0 7px hsla(227, 74%, 49%, .5);
+        padding: 40px
+    }
+
+    footer.footer {
+        background: #2e5f85;
+        margin-top: 100px;
+        padding: 50px
+    }
+
+    footer.footer .footer-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
+
+    footer.footer .footer-top .left {
+        width: 70%
+    }
+
+    footer.footer .footer-top .right {
+        width: 70%;
+        text-align: center;
+        margin-top: 50px
+    }
+}
+
+@media (min-width:768px) {
+    .show768 {
+        display: none
+    }
+}
+
+@media (max-width:768px) {
+    .mtop-ads {
+        margin-top: 10px;
+    }
+
+    section.content .grammar table tr td.head2 {
+        color: #1c1553;
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center
+    }
+
+    section.content .grammar table {
+        width: 85%
+    }
+
+    .secMtop {
+        margin-top: 70px
+    }
+
+    footer.footer .footer-top .left p {
+        padding: 0
+    }
+
+    section.content {
+        padding-top: 120px
+    }
+
+    section.content h1 {
+        font-size: 25px
+    }
+
+    nav .navlinks,
+    nav .navlinks-2 {
+        top: 94px
+    }
+
+    section.content table {
+        width: 90%
+    }
+
+    section.content table tr td {
+        padding: 10px;
+        border: 2px solid #2048da;
+        color: #2048da;
+        font-size: 17px;
+        font-weight: 700;
+        display: table-cell;
+        vertical-align: inherit
+    }
+
+    header {
+        width: 100vw;
+        height: auto;
+        background: #fff;
+        margin-bottom: 30px
+    }
+
+    #how-to-learn {
+        font-size: 20px;
+        text-align: center
+    }
+
+    section.how-to-learn .head hr {
+        width: 100px;
+        margin: 0 auto;
+        border: 2px solid #2048da;
+        position: relative;
+        top: -2.5px
+    }
+
+    .none768 {
+        display: none
+    }
+
+    .left-content {
+        padding: 0 100px;
+        text-align: center
+    }
+
+    section.grammer .section-content,
+    section.meanings .section-content,
+    section.vocabulary .section-content {
+        margin-top: 40px;
+        text-align: center
+    }
+
+    section.how-to-learn .section-content {
+        margin-top: 40px;
+        padding: 40px
+    }
+
+    section.grammer,
+    section.meanings,
+    section.vocabulary {
+        padding: 30px
+    }
+
+    section.how-to-learn {
+        padding: 30px 50px
+    }
+
+    section .head h1 {
+        font-size: 35px
+    }
+
+    .backBtn {
+        font-size: 50px;
+        position: relative;
+        right: -30px;
+        bottom: -100px;
+        color: #c52828
+    }
+
+    section.also-learn h1 {
+        font-size: 30px
+    }
+
+    section.also-learn a {
+        margin-top: 20px;
+        font-size: 18px;
+        text-decoration: underline;
+        color: #c52828;
+        font-weight: 700
+    }
+}
+
+@media (min-width:550px) {
+    .show550 {
+        display: none
+    }
+}
+
+@media (max-width:550px) {
+
+    .bar,
+    .change {
+        display: block
+    }
+
+    section.content .grammar table {
+        width: 90%
+    }
+
+    section.content .grammar table tr td {
+        font-size: 17px;
+        font-weight: 500;
+        text-align: justify;
+        padding: 20px;
+        line-height: 1.3
+    }
+
+    section.content .grammar table tr td span {
+        color: #c52828;
+        font-weight: 700;
+        font-size: 17px
+    }
+
+    section.content .grammar table tr td.head {
+        color: #c52828;
+        font-weight: 700;
+        font-size: 18px
+    }
+
+    section.also-learn h1 {
+        font-size: 23px
+    }
+
+    section.also-learn a {
+        margin-top: 20px;
+        font-size: 16px;
+        text-decoration: underline;
+        color: #c52828;
+        font-weight: 700
+    }
+
+    .banner-content .left-content,
+    .secMtop {
+        margin-top: 50px
+    }
+
+    .backBtn {
+        font-size: 40px;
+        position: relative;
+        right: -10px;
+        bottom: -80px;
+        color: #c52828
+    }
+
+    .banner-content .right-content {
+        width: 65%
+    }
+
+    .banner-content .right-content img {
+        width: 230px;
+        height: 230px
+    }
+
+    section.content h1 {
+        font-size: 25px
+    }
+
+    nav .navlinks,
+    nav .navlinks-2 {
+        top: 70px
+    }
+
+    section.content table {
+        width: 93%
+    }
+
+    section.content table tr td {
+        padding: 10px 5px;
+        border: 2px solid #2048da;
+        color: #2048da;
+        font-size: 15px;
+        font-weight: 700;
+        display: table-cell;
+        vertical-align: inherit
+    }
+
+    #menu-bar {
+        width: 25px;
+        cursor: pointer
+    }
+
+    .bar {
+        height: 3px;
+        margin: 1px 0;
+        width: 100%;
+        background-color: #2048da;
+        border-radius: 5px;
+        transition: .2s
+    }
+
+    #bar1 {
+        transform: translateY(-2px)
+    }
+
+    #bar3 {
+        transform: translateY(2px)
+    }
+
+    .change .bar {
+        background-color: #000;
+        margin: 0
+    }
+
+    .change #bar1 {
+        transform: translateY(2px) rotateZ(-45deg)
+    }
+
+    .change #bar2 {
+        opacity: 0
+    }
+
+    .change #bar3 {
+        transform: translateY(-4px) rotateZ(45deg)
+    }
+
+    section.content table tr th,
+    section.how-to-learn .section-content p {
+        font-size: 16px
+    }
+
+    section .section-content a {
+        width: 90%;
+        font-size: 16px;
+        margin: 15px auto;
+        padding: 10px;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
+        background: #fff;
+        color: #2048da;
+        border-radius: 7px;
+        box-shadow: 0 0 7px hsla(227, 74%, 49%, .5);
+        display: inline-block;
+        position: relative;
+        transition: .2s
+    }
+
+    section.meanings .section-content {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;
+        text-align: center
+    }
+
+    section.content {
+        padding-top: 80px
+    }
+
+    section .head p,
+    section.meanings .section-content a button {
+        font-size: 15px
+    }
+
+    .left-content {
+        padding: 0 30px;
+        text-align: center
+    }
+
+    .banner-content .left-content h1 {
+        color: #1c1553;
+        font-size: 30px
+    }
+
+    .banner-content .left-content p {
+        font-size: 16px;
+        color: #666;
+        margin-top: 20px
+    }
+
+    .banner-content .left-content button {
+        background: #2048da;
+        color: #fff;
+        padding: 7px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 50px;
+        margin-top: 30px;
+        cursor: pointer
+    }
+
+    section .head h1 {
+        font-size: 30px
+    }
+
+    .logo h1 {
+        font-size: 25px;
+        color: #2048da
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 15px
+    }
+
+    section.grammer,
+    section.how-to-learn,
+    section.meanings,
+    section.vocabulary {
+        padding: 30px 20px
+    }
+
+    section.how-to-learn .section-content {
+        padding: 30px
+    }
+
+    #read-more {
+        padding: 7px 20px;
+        font-size: 16px
+    }
+
+    footer.footer {
+        background: #2e5f85;
+        margin-top: 50px;
+        padding: 50px 20px
+    }
+
+    footer.footer .footer-top .left {
+        width: 97%
+    }
+
+    footer.footer .footer-top .right {
+        width: 97%;
+        text-align: center;
+        margin-top: 50px
+    }
+}
+
+@media (max-width:400px) {
+    .banner-content .right-content img {
+        width: 200px
+    }
+
+    section .head p {
+        font-size: 14px
+    }
+
+    #how-to-learn,
+    section.content h1 {
+        font-size: 18px;
+        text-align: center
+    }
+
+    section.content h1 {
+        color: #1c1553
+    }
+
+    section.content table tr td {
+        padding: 10px 5px;
+        border: 2px solid #2048da;
+        vertical-align: inherit;
+        color: #2048da;
+        font-size: 14px;
+        font-weight: 700;
+        display: table-cell;
+        vertical-align: inherit
+    }
+}
+
+@media (max-width:360px) {
+    section.content table tr th {
+        font-size: 15px
+    }
+
+    section.content .grammar table tr td {
+        font-size: 15px;
+        font-weight: 500;
+        text-align: justify;
+        padding: 20px;
+        line-height: 1.3
+    }
+
+    section.content .grammar table tr td span {
+        color: #c52828;
+        font-weight: 700;
+        font-size: 15px
+    }
+
+    section.content .grammar table tr td.head {
+        color: #c52828;
+        font-weight: 700;
+        font-size: 16px
+    }
+
+    section.content table tr td {
+        font-size: 13px
+    }
+
+    section.also-learn a {
+        margin-top: 20px;
+        font-size: 14px;
+        text-decoration: underline;
+        color: #c52828;
+        font-weight: 700
+    }
+}
