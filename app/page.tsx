@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Articles from '@/components/articles'
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,9 +22,9 @@ export default function Home() {
             <br className="none768" />
             develop their proficiency in both English and Hindi.
           </p>
-          <a href="/index.html">
+          <Link href="/index.html">
             <button>Visit Now</button>
-          </a>
+          </Link>
         </div>
 
         <div className="right-content" id="sm-none">

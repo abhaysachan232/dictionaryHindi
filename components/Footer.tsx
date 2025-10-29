@@ -26,7 +26,7 @@ export default function Footer() {
       </div>
 
       <div className="other-links">
-        <a href="./policy.html" target="_blank">Privacy Policy</a>
+        <Link href="/policy.html" >Privacy Policy</Link>
       </div>
 
       <hr style={{ border: "1px solid #8EB6D6" }} />
