@@ -3,12 +3,16 @@
 import Link from "next/link";
 import { useEffect } from "react";
 
+declare global {
+  interface Window {
+    menuOnClick?: () => void;
+  }
+}
 
 export default function Header() {
   useEffect(() => {
-    // purani site ka JS (menu toggle etc.)
     const script = document.createElement("script");
-    script.src = "/js/app.js"; // ✅ public folder se load hoga
+    script.src = "/js/app.js";
     script.defer = true;
     document.body.appendChild(script);
 
@@ -26,7 +30,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <div id="menu-bar" onClick={() => (window as any).menuOnClick?.()}>
+        <div id="menu-bar" onClick={() => window.menuOnClick?.()}>
           <div id="bar1" className="bar"></div>
           <div id="bar2" className="bar"></div>
           <div id="bar3" className="bar"></div>

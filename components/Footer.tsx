@@ -10,7 +10,7 @@ export default function Footer() {
           <h1>DictionaryHindi</h1>
           <p>
             DictionaryHindi is a valuable resource for students, educators, and language enthusiasts who want
-            to develop their proficiency in both English and Hindi. Whether you're looking to improve your
+            to develop their proficiency in both English and Hindi. Whether you&apos;re looking to improve your
             grammar, expand your vocabulary, or explore the meanings of words.
           </p>
         </div>
