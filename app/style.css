@@ -33,7 +33,34 @@ iframe {
   max-width: 100%;
   border: none;
 }
+.articles{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.text{
+  margin: 5px;
+}
 
+.heading{
+display: flex;
+justify-content: center;
+flex-direction: row;
+}
+pre {
+  white-space: pre-wrap;      /* preserve newlines, but allow wrapping */
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -o-pre-wrap;   /* Opera */
+  word-wrap: break-word;      /* legacy */
+  overflow-wrap: anywhere;    /* modern: allow break at any point */
+  overflow-x: auto;          /* horizontal scroll if needed */
+           /* optional: hyphenate words where supported */
+  line-height: 1.6;
+  padding: 1rem;
+  background: #f7fafc;       /* light bg for visibility */
+  border-radius: 8px;
+  border: 1px solid #e6edf3;
+}
 .secMtop,
 .secMtop2 {
   margin-top: 100px
